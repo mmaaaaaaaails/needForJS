@@ -9,8 +9,6 @@ audio.src = 'audio.mp3';
 audio.type = 'audio/mp3';
 audio.style.cssText = `position: absolute; top: -1000px`;
 
-// audio.remove();
-
 car.classList.add('car');
 
 start.addEventListener('click', startGame);
@@ -131,7 +129,11 @@ function moveEnemy() {
         let carRect = car.getBoundingClientRect();
         let enemyRect = item.getBoundingClientRect();
 
-        if (carRect.top < enemyRect.bottom && carRect.right > enemyRect.left && carRect.left < enemyRect.right && carRect.bottom > enemyRect.top) {
+        if (carRect.top < enemyRect.bottom &&
+            carRect.right > enemyRect.left &&
+            carRect.left < enemyRect.right &&
+            carRect.bottom > enemyRect.top) {
+
             setting.start = false;
             start.classList.remove('hide');
             start.style.top = score.offsetHeight;
